@@ -127,7 +127,7 @@ class LanguagePairDataset(FairseqDataset):
     def __getitem__(self, index):
         tgt_item = self.tgt[index] if self.tgt is not None else None
         src_item = self.src[index]
-
+        print(">"*40,"\n","src:",self.src, ":t:",str(type(self.src)),"tgt:",self.tgt, ":t:",str(type(self.tgt)),"\n",">"*40)
         src_id = self.src.get_corpus_id(index)
         tgt_id = self.tgt.get_corpus_id(index)
 
