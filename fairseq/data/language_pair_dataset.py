@@ -129,12 +129,12 @@ class LanguagePairDataset(FairseqDataset):
         src_item = self.src[index]
         print(">"*40,"\n","src:",self.src, ":t:",str(type(self.src)),"tgt:",self.tgt, ":t:",str(type(self.tgt)),"\n",">"*40)
         if str(type(self.src))=="<class 'list'>":
-            src_id = [i.get_corpus_id(index) for i in self.src[0]]
+            src_id = [[i.get_corpus_id(index) for i in self.src[0]]]
         else:
             src_id = self.src.get_corpus_id(index)
             
         if str(type(self.tgt))=="<class 'list'>":
-            tgt_id = [i.get_corpus_id(index) for i in self.tgt[0]]
+            tgt_id = [[i.get_corpus_id(index) for i in self.tgt[0]]]
         else:
             tgt_id = self.tgt.get_corpus_id(index)
             
